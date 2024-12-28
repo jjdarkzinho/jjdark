@@ -1,0 +1,227 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definição das variáveis de cores */
+:root {
+    --background-color: #000000; /* Preto */
+    --text-color: #ffffff; /* Branco */
+    --card-background: rgba(26, 26, 26, 0.9); /* Preto acinzentado com transparência */
+    --card-text-color: #ffffff; /* Branco */
+    --button-background: #ffffff; /* Branco */
+    --button-text-color: #000000; /* Preto */
+    --footer-background: #000000; /* Preto */
+    --footer-text-color: #ffffff; /* Branco */
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://cdn.discordapp.com/attachments/1322070164589772873/1322095400739409940/JJDARKO_Easy-Resize.com.jpg?ex=676fa0ca&is=676e4f4a&hm=666f4637a20ef693304e8af55c94330ad81440ea2c95b700b6e87fb0be367473&');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px; /* Espaço para o rodapé */
+    cursor: url('nike.png'), auto; /* Customizando o cursor */
+}
+
+/* Camada de fundo escuro (garantindo que não cubra o conteúdo) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Camada escura */
+    z-index: -1; /* Garantindo que o fundo esteja atrás de tudo */
+}
+
+/* Cabeçalho */
+/* Cabeçalho */
+header {
+    background-color: transparent; /* Tornar o fundo do cabeçalho transparente */
+    color: var(--text-color); /* Cor do texto */
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Adiciona borda sutil, transparente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para o texto garantir legibilidade */
+}
+
+
+/* Abas (horizontal) */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    z-index: 1; /* Garantindo que as abas fiquem acima do fundo */
+}
+
+.tablinks {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.tablinks:hover {
+    background-color: #555;
+}
+
+.tablinks.active {
+    background-color: #000;
+}
+
+/* Conteúdo das abas */
+.tabcontent {
+    display: none;
+    padding: 20px;
+    z-index: 1; /* Garantindo que o conteúdo das abas fique acima do fundo */
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+/* Cartões na horizontal */
+.category-cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha */
+    justify-content: flex-start; /* Alinha os cartões à esquerda */
+    gap: 20px; /* Espaçamento entre os cartões */
+    margin-top: 20px;
+    z-index: 1; /* Garante que os cartões fiquem sobre a camada escura */
+}
+
+/* Cartões */
+.download-card {
+    background-color: var(--card-background); /* Cartões com fundo transparente */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+    width: 280px; /* Largura fixa para todos os cartões */
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.download-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Corpo do cartão */
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Botões */
+.card-body a {
+    display: block;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card-body a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Rodapé */
+footer {
+    background-color: transparent; /* Tornar o fundo do rodapé transparente */
+    color: var(--footer-text-color); /* Cor do texto */
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para o texto garantir legibilidade */
+}
+/* Estilo para os botões sociais */
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+    z-index: 1000; /* Garante que os botões fiquem sobre o conteúdo */
+}
+
+/* Estilo geral dos botões */
+.social-button {
+    width: 50px; /* Tamanho fixo dos botões */
+    height: 50px; /* Tamanho fixo dos botões */
+    border-radius: 50%; /* Faz os botões ficarem redondos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo transparente com leve sombra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra leve para os botões */
+    overflow: hidden; /* Garante que as imagens não saiam do círculo */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.social-button:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Fundo mais opaco no hover */
+    transform: scale(1.1); /* Aumenta o botão quando o mouse passa */
+}
+
+/* Configuração para as imagens dentro dos botões */
+.social-button img {
+    width: 70px; /* Ajuste o tamanho das imagens conforme necessário */
+    height: 70px; /* Ajuste o tamanho das imagens conforme necessário */
+    object-fit: contain; /* Garante que a imagem não distorça */
+}
+
+/* Botão Discord */
+.social-button.discord {
+    background-image: url('/imagens/discord.png'); /* Substitua com o ícone do Discord */
+}
+
+/* Botão YouTube */
+.social-button.youtube {
+    background-image: url('imagens/youtube.png'); /* Substitua com o ícone do YouTube */
+}
+/* Títulos do cartão */
+.download-card .card-body a {
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    line-height: 1.5; /* Altura da linha */
+}
+
+/* Texto no corpo do cartão */
+.download-card .card-body p {
+    letter-spacing: 0.5px; /* Espaçamento para o texto normal */
+    line-height: 1.6;
+}
